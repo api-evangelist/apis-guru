@@ -1,0 +1,59 @@
+{
+    "id": "64cef30be9a603cb3a758970a52b6d2b",
+    "name": "APIs.guru",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "a7909bbb16e4c9c69873118a790383cc",
+            "name": "List all APIs",
+            "url": "httpsapi.apis.guru\/v2\/\/list.json",
+            "description": "List all APIs in the directory.\nReturns links to OpenAPI specification for each API in the directory.\nIf API exist in multiple versions `preferred` one is explicitly marked.\n\nSome basic info from OpenAPI spec is cached inside each object.\nThis allows to generate some simple views without need to fetch OpenAPI spec for each API.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "64cef30be9a603cb3a758970a52b6d2b",
+            "rawModeData": ""
+        },
+        {
+            "id": "051cd7ef8035e7c08b3f0184880a6d87",
+            "name": "Get basic metrics",
+            "url": "httpsapi.apis.guru\/v2\/\/metrics.json",
+            "description": "Some basic metrics for the entire directory.\nJust stunning numbers to put on a front page and are intended purely for WoW effect :)\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "64cef30be9a603cb3a758970a52b6d2b",
+            "rawModeData": ""
+        }
+    ]
+}
