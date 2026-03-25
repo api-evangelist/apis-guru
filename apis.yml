@@ -1,0 +1,38 @@
+aid: apis-guru
+name: APIs.guru
+description: >-
+  APIs.guru is an open source directory of public REST APIs with machine-readable OpenAPI definitions for API discovery and cataloging.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Developer Portal
+  - API Catalog
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/apis.yml
+created: '2026-03-25'
+modified: '2026-03-25'
+specificationVersion: '0.19'
+apis:
+  - aid: apis-guru:apis-guru
+    name: APIs.guru
+    description: >-
+      APIs.guru is an open source directory of public REST APIs with machine-readable OpenAPI definitions for API discovery and cataloging.
+    humanURL: https://apis.guru
+    tags:
+      - Developer Portal
+      - API Catalog
+    properties:
+      - type: Documentation
+        url: https://apis.guru/browse-apis/
+      - type: GitHub Repository
+        url: https://github.com/APIs-guru
+common:
+  - type: Website
+    url: https://apis.guru
+  - type: Documentation
+    url: https://apis.guru/browse-apis/
+  - type: GitHub Organization
+    url: https://github.com/APIs-guru
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
