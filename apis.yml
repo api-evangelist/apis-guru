@@ -1,38 +1,55 @@
 aid: apis-guru
 name: APIs.guru
 description: >-
-  APIs.guru is an open source directory of public REST APIs with machine-readable OpenAPI definitions for API discovery and cataloging.
+  APIs.guru is an open source, community-driven directory of public REST API
+  definitions in OpenAPI 2.0/3.x format, described as the Wikipedia for Web
+  APIs, cataloging over 2,500 API descriptions with 100,000+ endpoints.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Developer Portal
   - API Catalog
+  - API Directory
+  - OpenAPI
+  - Open Source
+  - Discovery
 url: >-
   https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/apis.yml
 created: '2026-03-25'
-modified: '2026-03-25'
+modified: '2026-03-26'
 specificationVersion: '0.19'
 apis:
-  - aid: apis-guru:apis-guru
-    name: APIs.guru
+  - aid: apis-guru:apis-guru-api
+    name: APIs.guru REST API
     description: >-
-      APIs.guru is an open source directory of public REST APIs with machine-readable OpenAPI definitions for API discovery and cataloging.
-    humanURL: https://apis.guru
+      The APIs.guru REST API provides programmatic access to the directory of
+      public API definitions, allowing developers to search, browse, and
+      retrieve OpenAPI specifications from the catalog.
+    humanURL: https://apis.guru/api-doc
     tags:
-      - Developer Portal
-      - API Catalog
+      - API Directory
+      - OpenAPI
+      - Discovery
+      - Catalog
     properties:
       - type: Documentation
-        url: https://apis.guru/browse-apis/
-      - type: GitHub Repository
-        url: https://github.com/APIs-guru
+        url: https://apis.guru/api-doc
+      - type: Postman Collection
+        url: https://www.postman.com/api-evangelist/apis-guru/documentation/wtbfnfn/apis-guru
 common:
   - type: Website
     url: https://apis.guru
-  - type: Documentation
+  - type: About
+    url: https://apis.guru/about
+  - type: API Documentation
+    url: https://apis.guru/api-doc
+  - type: Browse APIs
     url: https://apis.guru/browse-apis/
   - type: GitHub Organization
     url: https://github.com/APIs-guru
+  - type: GitHub Repository
+    url: https://github.com/APIs-guru/openapi-directory
+  - type: Open Collective
+    url: https://opencollective.com/openapi-directory
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
