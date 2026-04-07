@@ -9,9 +9,9 @@ image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - API Catalog
   - API Directory
-  - OpenAPI
-  - Open Source
   - Discovery
+  - Open Source
+  - OpenAPI
 url: >-
   https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/apis.yml
 created: '2026-03-25'
@@ -27,9 +27,9 @@ apis:
     humanURL: https://apis.guru/api-doc
     tags:
       - API Directory
-      - OpenAPI
-      - Discovery
       - Catalog
+      - Discovery
+      - OpenAPI
     properties:
       - type: Documentation
         url: https://apis.guru/api-doc
