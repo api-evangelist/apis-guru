@@ -1,0 +1,21 @@
+{
+  "datasets": [
+    "example-value"
+  ],
+  "fixedPct": 42,
+  "fixes": 42,
+  "invalid": 42,
+  "issues": 42,
+  "numAPIs": 42,
+  "numDrivers": 42,
+  "numEndpoints": 42,
+  "numProviders": 42,
+  "numSpecs": 42,
+  "stars": 42,
+  "thisWeek": {
+    "added": 42,
+    "updated": 42
+  },
+  "unofficial": 42,
+  "unreachable": 42
+}

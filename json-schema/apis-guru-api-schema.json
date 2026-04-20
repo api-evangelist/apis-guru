@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-schema.json",
+  "title": "API",
+  "description": "Meta information about API",
+  "additionalProperties": false,
+  "properties": {
+    "added": {
+      "description": "Timestamp when the API was first added to the directory",
+      "format": "date-time",
+      "type": "string"
+    },
+    "preferred": {
+      "description": "Recommended version",
+      "type": "string"
+    },
+    "versions": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ApiVersion"
+      },
+      "description": "List of supported versions of the API",
+      "minProperties": 1,
+      "type": "object"
+    }
+  },
+  "required": [
+    "added",
+    "preferred",
+    "versions"
+  ],
+  "type": "object"
+}

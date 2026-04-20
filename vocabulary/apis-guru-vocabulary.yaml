@@ -1,0 +1,212 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "APIs.guru"
+  description: "Vocabulary and taxonomy for the APIs.guru OpenAPI directory, covering operational API endpoints and capability workflow dimensions for API discovery and catalog access."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: apis-guru
+      version: "2.2.0"
+      baseUrl: https://api.apis.guru/v2
+      status: active
+      description: "Public REST API for the APIs.guru OpenAPI directory"
+
+  resources:
+    - name: apis
+      description: "All API definitions in the directory"
+      apis:
+        - apis-guru
+      actions:
+        - list
+
+    - name: metrics
+      description: "Directory statistics and metrics"
+      apis:
+        - apis-guru
+      actions:
+        - get
+
+    - name: providers
+      description: "API provider domain names"
+      apis:
+        - apis-guru
+      actions:
+        - list
+        - get
+
+    - name: services
+      description: "Service names for multi-service providers"
+      apis:
+        - apis-guru
+      actions:
+        - list
+
+    - name: specs
+      description: "Specific API version specifications"
+      apis:
+        - apis-guru
+      actions:
+        - get
+
+  actions:
+    - name: list
+      description: "Retrieve a collection of resources"
+      httpMethod: GET
+      pattern: read
+
+    - name: get
+      description: "Retrieve a specific resource by identifier"
+      httpMethod: GET
+      pattern: read
+
+  schemas:
+    core:
+      - name: API
+        description: "Meta information about an API including preferred version and all versions"
+        keyProperties:
+          - added
+          - preferred
+          - versions
+
+      - name: ApiVersion
+        description: "Details for a specific API version including OpenAPI spec URLs and metadata"
+        keyProperties:
+          - swaggerUrl
+          - swaggerYamlUrl
+          - info
+          - openapiVer
+          - added
+          - updated
+
+      - name: APIs
+        description: "Dictionary of API entries keyed by provider:service identifier"
+        keyProperties: []
+
+      - name: Metrics
+        description: "Directory-wide statistics including API count, endpoint count, and weekly updates"
+        keyProperties:
+          - numAPIs
+          - numEndpoints
+          - numProviders
+          - numSpecs
+          - thisWeek
+
+  parameters:
+    identifiers:
+      - name: provider
+        description: "Provider domain name (e.g. stripe.com)"
+        in: path
+        type: string
+
+      - name: service
+        description: "Service name for multi-service providers (e.g. payments)"
+        in: path
+        type: string
+
+      - name: api
+        description: "API version string (e.g. 2.1.0)"
+        in: path
+        type: string
+
+  authentication:
+    schemes:
+      - type: none
+        description: "The APIs.guru REST API is completely public with no authentication required"
+
+capability:
+  workflows:
+    - name: API Discovery
+      file: capabilities/api-discovery.yaml
+      description: "Discover, browse, and retrieve API definitions from the APIs.guru directory"
+      apisCombined:
+        - APIs.guru REST API
+      toolCount: 7
+      personas:
+        - API Developer
+        - Platform Engineer
+
+  personas:
+    - id: api-developer
+      name: API Developer
+      description: "A developer building integrations who needs to discover and retrieve API specifications"
+      workflows:
+        - API Discovery
+
+    - id: platform-engineer
+      name: Platform Engineer
+      description: "A platform or DevX engineer building API catalogs, portals, or governance tooling"
+      workflows:
+        - API Discovery
+
+  domains:
+    - name: API Discovery
+      description: "Finding and retrieving API definitions from public directories"
+      resources:
+        - apis
+        - providers
+        - specs
+
+    - name: Directory Metrics
+      description: "Statistics and health metrics for the APIs.guru directory"
+      resources:
+        - metrics
+
+  namespaces:
+    - id: apis-guru
+      type: consumed
+      description: "APIs.guru REST API namespace"
+
+    - id: api-discovery-api
+      type: rest
+      port: 8080
+      description: "REST API exposure for discovery workflows"
+
+    - id: api-discovery-mcp
+      type: mcp
+      port: 9090
+      description: "MCP server for AI-assisted API discovery"
+
+  binds:
+    - description: "No environment variables required — APIs.guru API is public"
+
+crossReference:
+  - resource: apis
+    operations:
+      - listAPIs
+    workflows:
+      - API Discovery
+    personas:
+      - API Developer
+      - Platform Engineer
+
+  - resource: providers
+    operations:
+      - getProviders
+      - getProvider
+      - getServices
+    workflows:
+      - API Discovery
+    personas:
+      - API Developer
+      - Platform Engineer
+
+  - resource: specs
+    operations:
+      - getAPI
+      - getServiceAPI
+    workflows:
+      - API Discovery
+    personas:
+      - API Developer
+      - Platform Engineer
+
+  - resource: metrics
+    operations:
+      - getMetrics
+    workflows:
+      - API Discovery
+    personas:
+      - Platform Engineer

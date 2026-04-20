@@ -1,0 +1,260 @@
+rules:
+  # INFO / METADATA
+  info-title-format:
+    description: Info title should start with "APIs.guru"
+    severity: warn
+    given: "$.info.title"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^APIs\\.guru"
+
+  info-description-required:
+    description: Info must have a description
+    severity: error
+    given: "$.info"
+    then:
+      field: description
+      function: truthy
+
+  info-version-required:
+    description: Info must have a version
+    severity: error
+    given: "$.info"
+    then:
+      field: version
+      function: truthy
+
+  info-contact-required:
+    description: Info should have contact information
+    severity: warn
+    given: "$.info"
+    then:
+      field: contact
+      function: truthy
+
+  info-license-required:
+    description: Info should have license information
+    severity: warn
+    given: "$.info"
+    then:
+      field: license
+      function: truthy
+
+  # OPENAPI VERSION
+  openapi-version-3:
+    description: Specs should use OpenAPI 3.0.x
+    severity: warn
+    given: "$.openapi"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^3\\.0\\."
+
+  # SERVERS
+  servers-defined:
+    description: Servers array must be defined
+    severity: error
+    given: "$"
+    then:
+      field: servers
+      function: truthy
+
+  servers-https-only:
+    description: Server URLs must use HTTPS
+    severity: error
+    given: "$.servers[*].url"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # PATHS — NAMING CONVENTIONS
+  paths-kebab-case:
+    description: Path segments should use kebab-case
+    severity: warn
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(\\/([a-z0-9-{}._]+))*$"
+
+  paths-no-trailing-slash:
+    description: Paths must not have a trailing slash
+    severity: warn
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "\\/$"
+
+  # OPERATIONS
+  operation-summary-required:
+    description: All operations must have a summary
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    then:
+      field: summary
+      function: truthy
+
+  operation-summary-prefix:
+    description: Operation summaries should start with "APIs.guru"
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^APIs\\.guru"
+
+  operation-description-required:
+    description: All operations should have a description
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    then:
+      field: description
+      function: truthy
+
+  operation-id-required:
+    description: All operations must have an operationId
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    then:
+      field: operationId
+      function: truthy
+
+  operation-id-camel-case:
+    description: OperationId should use camelCase
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete].operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]+$"
+
+  operation-tags-required:
+    description: All operations must have at least one tag
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    then:
+      field: tags
+      function: truthy
+
+  # TAGS
+  tags-defined:
+    description: Global tags array should be defined
+    severity: warn
+    given: "$"
+    then:
+      field: tags
+      function: truthy
+
+  tag-description-required:
+    description: All tags should have descriptions
+    severity: warn
+    given: "$.tags[*]"
+    then:
+      field: description
+      function: truthy
+
+  # PARAMETERS
+  parameter-description-required:
+    description: All parameters must have descriptions
+    severity: error
+    given: "$.paths[*][*].parameters[*]"
+    then:
+      field: description
+      function: truthy
+
+  parameter-schema-type-required:
+    description: All parameters must have a schema type
+    severity: error
+    given: "$.paths[*][*].parameters[*].schema"
+    then:
+      field: type
+      function: truthy
+
+  # RESPONSES
+  response-success-required:
+    description: Operations must have at least one 2xx response
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: responses
+      function: truthy
+
+  response-description-required:
+    description: All responses must have descriptions
+    severity: error
+    given: "$.paths[*][*].responses[*]"
+    then:
+      field: description
+      function: truthy
+
+  # SCHEMAS — PROPERTY NAMING
+  schema-description-recommended:
+    description: Component schemas should have descriptions
+    severity: info
+    given: "$.components.schemas[*]"
+    then:
+      field: description
+      function: truthy
+
+  schema-type-defined:
+    description: Schema objects should have a type defined
+    severity: warn
+    given: "$.components.schemas[*]"
+    then:
+      field: type
+      function: truthy
+
+  # SECURITY
+  no-global-security-required:
+    description: Security defined at operation or global level
+    severity: info
+    given: "$"
+    then:
+      field: security
+      function: defined
+
+  # HTTP METHOD CONVENTIONS
+  get-no-request-body:
+    description: GET operations must not have a request body
+    severity: error
+    given: "$.paths[*].get"
+    then:
+      field: requestBody
+      function: falsy
+
+  delete-no-request-body:
+    description: DELETE operations should not have a request body
+    severity: warn
+    given: "$.paths[*].delete"
+    then:
+      field: requestBody
+      function: falsy
+
+  # GENERAL QUALITY
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings
+    severity: error
+    given: "$..description"
+    then:
+      function: pattern
+      functionOptions:
+        match: ".+"
+
+  external-docs-encouraged:
+    description: External documentation is encouraged
+    severity: info
+    given: "$"
+    then:
+      field: externalDocs
+      function: truthy
+
+  examples-encouraged:
+    description: Schema properties should have examples
+    severity: info
+    given: "$.components.schemas[*].properties[*]"
+    then:
+      field: example
+      function: truthy

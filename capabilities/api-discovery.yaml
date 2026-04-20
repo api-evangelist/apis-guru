@@ -1,0 +1,194 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "APIs.guru API Discovery"
+  description: "Workflow capability for discovering, browsing, and retrieving API definitions from the APIs.guru directory. Enables developers and platform teams to programmatically find public APIs, retrieve their OpenAPI specifications, and explore the catalog by provider. The primary persona is an API developer or platform engineer building integrations or cataloging APIs."
+  tags:
+    - API Catalog
+    - API Directory
+    - API Discovery
+    - APIs.guru
+    - OpenAPI
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys: {}
+
+capability:
+  consumes:
+    - import: apis-guru
+      location: ./shared/apis-guru-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: api-discovery-api
+      description: "Unified REST API for API discovery and catalog browsing via APIs.guru."
+      resources:
+        - path: /v1/apis
+          name: apis
+          description: "All APIs in the directory"
+          operations:
+            - method: GET
+              name: list-apis
+              description: "List all APIs in the APIs.guru directory"
+              call: "apis-guru.list-apis"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/metrics
+          name: metrics
+          description: "Directory metrics and statistics"
+          operations:
+            - method: GET
+              name: get-metrics
+              description: "Get directory-wide metrics"
+              call: "apis-guru.get-metrics"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/providers
+          name: providers
+          description: "API providers in the directory"
+          operations:
+            - method: GET
+              name: list-providers
+              description: "List all API providers"
+              call: "apis-guru.list-providers"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/providers/{provider}
+          name: provider-apis
+          description: "APIs for a specific provider"
+          operations:
+            - method: GET
+              name: get-provider-apis
+              description: "Get all APIs for a provider"
+              call: "apis-guru.get-provider"
+              with:
+                provider: "rest.provider"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/providers/{provider}/services
+          name: provider-services
+          description: "Services for a specific provider"
+          operations:
+            - method: GET
+              name: get-provider-services
+              description: "List service names for a provider"
+              call: "apis-guru.get-services"
+              with:
+                provider: "rest.provider"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/specs/{provider}/{api}
+          name: api-spec
+          description: "Specific API version spec"
+          operations:
+            - method: GET
+              name: get-api-spec
+              description: "Get a specific API version definition"
+              call: "apis-guru.get-api"
+              with:
+                provider: "rest.provider"
+                api: "rest.api"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: api-discovery-mcp
+      transport: http
+      description: "MCP server for AI-assisted API discovery and catalog exploration."
+      tools:
+        - name: list-all-apis
+          description: "List all APIs in the APIs.guru directory with their OpenAPI definition links and metadata"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.list-apis"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-directory-metrics
+          description: "Get metrics for the APIs.guru directory: total API count, endpoints, providers, and weekly additions"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "apis-guru.get-metrics"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-api-providers
+          description: "List all API provider domain names available in the APIs.guru directory"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.list-providers"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-provider-apis
+          description: "Get all API definitions for a specific provider by domain name (e.g. 'stripe.com', 'twilio.com')"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.get-provider"
+          with:
+            provider: "tools.provider"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-provider-services
+          description: "List all service names for a provider that has multiple services"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.get-services"
+          with:
+            provider: "tools.provider"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-api-definition
+          description: "Retrieve the OpenAPI definition for a specific API version from the directory"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.get-api"
+          with:
+            provider: "tools.provider"
+            api: "tools.api"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-service-api-definition
+          description: "Retrieve the OpenAPI definition for a specific service API version (for multi-service providers)"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.get-service-api"
+          with:
+            provider: "tools.provider"
+            service: "tools.service"
+            api: "tools.api"
+          outputParameters:
+            - type: object
+              mapping: "$."

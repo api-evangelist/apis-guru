@@ -1,0 +1,280 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "APIs.guru REST API"
+  description: "Public REST API for the APIs.guru OpenAPI directory. Provides programmatic access to over 2,500 API definitions, provider listings, and directory metrics. No authentication required."
+  tags:
+    - API Catalog
+    - API Directory
+    - API Discovery
+    - OpenAPI
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys: {}
+
+capability:
+  consumes:
+    - type: http
+      namespace: apis-guru
+      baseUri: https://api.apis.guru/v2
+      description: "APIs.guru REST API for directory access"
+      resources:
+        - name: apis
+          path: /list.json
+          description: "List all APIs in the directory"
+          operations:
+            - name: list-apis
+              method: GET
+              description: "List all APIs in the directory with OpenAPI definition links"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: metrics
+          path: /metrics.json
+          description: "Directory metrics and statistics"
+          operations:
+            - name: get-metrics
+              method: GET
+              description: "Get basic metrics for the entire directory"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: providers
+          path: /providers.json
+          description: "List all providers in the directory"
+          operations:
+            - name: list-providers
+              method: GET
+              description: "List all provider names in the directory"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: provider-apis
+          path: /{provider}.json
+          description: "APIs for a specific provider"
+          operations:
+            - name: get-provider
+              method: GET
+              description: "List all APIs for a particular provider"
+              inputParameters:
+                - name: provider
+                  in: path
+                  type: string
+                  required: true
+                  description: "Provider domain name (e.g. apis.guru)"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: provider-services
+          path: /{provider}/services.json
+          description: "Service names for a specific provider"
+          operations:
+            - name: get-services
+              method: GET
+              description: "List all service names for a particular provider"
+              inputParameters:
+                - name: provider
+                  in: path
+                  type: string
+                  required: true
+                  description: "Provider domain name"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: api-spec
+          path: /specs/{provider}/{api}.json
+          description: "Specific API version details"
+          operations:
+            - name: get-api
+              method: GET
+              description: "Retrieve one specific version of a particular API"
+              inputParameters:
+                - name: provider
+                  in: path
+                  type: string
+                  required: true
+                  description: "Provider domain name"
+                - name: api
+                  in: path
+                  type: string
+                  required: true
+                  description: "API version string (e.g. 2.1.0)"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: service-api-spec
+          path: /specs/{provider}/{service}/{api}.json
+          description: "Specific API version with service name"
+          operations:
+            - name: get-service-api
+              method: GET
+              description: "Retrieve one specific version of an API with a service name"
+              inputParameters:
+                - name: provider
+                  in: path
+                  type: string
+                  required: true
+                  description: "Provider domain name"
+                - name: service
+                  in: path
+                  type: string
+                  required: true
+                  description: "Service name"
+                - name: api
+                  in: path
+                  type: string
+                  required: true
+                  description: "API version string"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: apis-guru-rest
+      resources:
+        - path: /v1/apis
+          name: apis
+          description: "List all APIs in the directory"
+          operations:
+            - method: GET
+              name: list-apis
+              description: "List all APIs in the directory"
+              call: "apis-guru.list-apis"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/metrics
+          name: metrics
+          description: "Directory metrics"
+          operations:
+            - method: GET
+              name: get-metrics
+              description: "Get directory metrics"
+              call: "apis-guru.get-metrics"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/providers
+          name: providers
+          description: "List all providers"
+          operations:
+            - method: GET
+              name: list-providers
+              description: "List all providers in the directory"
+              call: "apis-guru.list-providers"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/providers/{provider}
+          name: provider-apis
+          description: "APIs for a specific provider"
+          operations:
+            - method: GET
+              name: get-provider
+              description: "Get APIs for a provider"
+              call: "apis-guru.get-provider"
+              with:
+                provider: "rest.provider"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: apis-guru-mcp
+      transport: http
+      tools:
+        - name: list-all-apis
+          description: "List all APIs in the APIs.guru directory with their OpenAPI definition links"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.list-apis"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-directory-metrics
+          description: "Get basic metrics for the entire APIs.guru directory including total APIs, endpoints, and providers"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "apis-guru.get-metrics"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-providers
+          description: "List all API provider domain names in the APIs.guru directory"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.list-providers"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-provider-apis
+          description: "List all APIs for a specific provider by domain name"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.get-provider"
+          with:
+            provider: "tools.provider"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-provider-services
+          description: "List all service names for a specific provider"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.get-services"
+          with:
+            provider: "tools.provider"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-api-spec
+          description: "Retrieve a specific version of an API definition from the directory"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "apis-guru.get-api"
+          with:
+            provider: "tools.provider"
+            api: "tools.api"
+          outputParameters:
+            - type: object
+              mapping: "$."

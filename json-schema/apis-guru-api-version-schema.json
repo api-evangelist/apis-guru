@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-version-schema.json",
+  "title": "ApiVersion",
+  "description": "ApiVersion schema from APIs.guru REST API",
+  "additionalProperties": false,
+  "properties": {
+    "added": {
+      "description": "Timestamp when the version was added",
+      "format": "date-time",
+      "type": "string"
+    },
+    "externalDocs": {
+      "description": "Copy of `externalDocs` section from OpenAPI definition",
+      "minProperties": 1,
+      "type": "object"
+    },
+    "info": {
+      "description": "Copy of `info` section from OpenAPI definition",
+      "minProperties": 1,
+      "type": "object"
+    },
+    "link": {
+      "description": "Link to the individual API entry for this API",
+      "format": "url",
+      "type": "string"
+    },
+    "openapiVer": {
+      "description": "The value of the `openapi` or `swagger` property of the source definition",
+      "type": "string"
+    },
+    "swaggerUrl": {
+      "description": "URL to OpenAPI definition in JSON format",
+      "format": "url",
+      "type": "string"
+    },
+    "swaggerYamlUrl": {
+      "description": "URL to OpenAPI definition in YAML format",
+      "format": "url",
+      "type": "string"
+    },
+    "updated": {
+      "description": "Timestamp when the version was updated",
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "required": [
+    "added",
+    "updated",
+    "swaggerUrl",
+    "swaggerYamlUrl",
+    "info",
+    "openapiVer"
+  ],
+  "type": "object"
+}

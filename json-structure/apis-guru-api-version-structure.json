@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-structure/apis-guru-api-version-structure.json",
+  "name": "ApiVersion",
+  "description": "ApiVersion schema from APIs.guru REST API",
+  "additionalProperties": false,
+  "properties": {
+    "added": {
+      "description": "Timestamp when the version was added",
+      "type": "datetime"
+    },
+    "externalDocs": {
+      "description": "Copy of `externalDocs` section from OpenAPI definition",
+      "minProperties": 1,
+      "type": "object"
+    },
+    "info": {
+      "description": "Copy of `info` section from OpenAPI definition",
+      "minProperties": 1,
+      "type": "object"
+    },
+    "link": {
+      "description": "Link to the individual API entry for this API",
+      "type": "uri"
+    },
+    "openapiVer": {
+      "description": "The value of the `openapi` or `swagger` property of the source definition",
+      "type": "string"
+    },
+    "swaggerUrl": {
+      "description": "URL to OpenAPI definition in JSON format",
+      "type": "uri"
+    },
+    "swaggerYamlUrl": {
+      "description": "URL to OpenAPI definition in YAML format",
+      "type": "uri"
+    },
+    "updated": {
+      "description": "Timestamp when the version was updated",
+      "type": "datetime"
+    }
+  },
+  "required": [
+    "added",
+    "updated",
+    "swaggerUrl",
+    "swaggerYamlUrl",
+    "info",
+    "openapiVer"
+  ],
+  "type": "object"
+}

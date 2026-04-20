@@ -1,0 +1,107 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pan": "https://apis.guru/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ApiVersion": "pan:ApiVersion",
+    "Metrics": "pan:Metrics",
+    "APIs": "pan:APIs",
+    "API": "pan:API",
+    "added": {
+      "@id": "pan:added",
+      "@type": "xsd:dateTime"
+    },
+    "externalDocs": {
+      "@id": "pan:externalDocs",
+      "@type": "@id"
+    },
+    "info": {
+      "@id": "pan:info",
+      "@type": "@id"
+    },
+    "link": {
+      "@id": "pan:link",
+      "@type": "@id"
+    },
+    "openapiVer": {
+      "@id": "pan:openapiVer",
+      "@type": "xsd:string"
+    },
+    "swaggerUrl": {
+      "@id": "pan:swaggerUrl",
+      "@type": "@id"
+    },
+    "swaggerYamlUrl": {
+      "@id": "pan:swaggerYamlUrl",
+      "@type": "@id"
+    },
+    "updated": "schema:dateModified",
+    "datasets": {
+      "@id": "pan:datasets",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "fixedPct": {
+      "@id": "pan:fixedPct",
+      "@type": "xsd:integer"
+    },
+    "fixes": {
+      "@id": "pan:fixes",
+      "@type": "xsd:integer"
+    },
+    "invalid": {
+      "@id": "pan:invalid",
+      "@type": "xsd:integer"
+    },
+    "issues": {
+      "@id": "pan:issues",
+      "@type": "xsd:integer"
+    },
+    "numAPIs": {
+      "@id": "pan:numAPIs",
+      "@type": "xsd:integer"
+    },
+    "numDrivers": {
+      "@id": "pan:numDrivers",
+      "@type": "xsd:integer"
+    },
+    "numEndpoints": {
+      "@id": "pan:numEndpoints",
+      "@type": "xsd:integer"
+    },
+    "numProviders": {
+      "@id": "pan:numProviders",
+      "@type": "xsd:integer"
+    },
+    "numSpecs": {
+      "@id": "pan:numSpecs",
+      "@type": "xsd:integer"
+    },
+    "stars": {
+      "@id": "pan:stars",
+      "@type": "xsd:integer"
+    },
+    "thisWeek": {
+      "@id": "pan:thisWeek",
+      "@type": "@id"
+    },
+    "unofficial": {
+      "@id": "pan:unofficial",
+      "@type": "xsd:integer"
+    },
+    "unreachable": {
+      "@id": "pan:unreachable",
+      "@type": "xsd:integer"
+    },
+    "preferred": {
+      "@id": "pan:preferred",
+      "@type": "xsd:string"
+    },
+    "versions": {
+      "@id": "pan:versions",
+      "@type": "@id"
+    }
+  }
+}
