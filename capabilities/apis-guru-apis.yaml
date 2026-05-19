@@ -1,0 +1,268 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: APIs.guru — APIs
+  description: 'APIs.guru — APIs. 7 operations. Lead operation: APIs.guru List All APIs. Self-contained Naftiko capability
+    covering one Apis Guru business surface.'
+  tags:
+  - Apis Guru
+  - APIs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APIS_GURU_API_KEY: APIS_GURU_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: apis-guru-apis
+    baseUri: https://api.apis.guru/v2
+    description: APIs.guru — APIs business capability. Self-contained, no shared references.
+    resources:
+    - name: list.json
+      path: /list.json
+      operations:
+      - name: listapis
+        method: GET
+        description: APIs.guru List All APIs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: metrics.json
+      path: /metrics.json
+      operations:
+      - name: getmetrics
+        method: GET
+        description: APIs.guru Get Basic Metrics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: providers.json
+      path: /providers.json
+      operations:
+      - name: getproviders
+        method: GET
+        description: APIs.guru List All Providers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: specs-provider-api}.json
+      path: /specs/{provider}/{api}.json
+      operations:
+      - name: getapi
+        method: GET
+        description: APIs.guru Retrieve One Version of a Particular API
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: specs-provider-service-api}.json
+      path: /specs/{provider}/{service}/{api}.json
+      operations:
+      - name: getserviceapi
+        method: GET
+        description: APIs.guru Retrieve One Version of a Particular API with a ServiceName.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: service
+          in: path
+          type: string
+          required: true
+    - name: provider}.json
+      path: /{provider}.json
+      operations:
+      - name: getprovider
+        method: GET
+        description: APIs.guru List All APIs for a Particular Provider
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: provider-services.json
+      path: /{provider}/services.json
+      operations:
+      - name: getservices
+        method: GET
+        description: APIs.guru List All ServiceNames for a Particular Provider
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: apis-guru-apis-rest
+    port: 8080
+    description: REST adapter for APIs.guru — APIs. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/list-json
+      name: list-json
+      description: REST surface for list.json.
+      operations:
+      - method: GET
+        name: listapis
+        description: APIs.guru List All APIs
+        call: apis-guru-apis.listapis
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/metrics-json
+      name: metrics-json
+      description: REST surface for metrics.json.
+      operations:
+      - method: GET
+        name: getmetrics
+        description: APIs.guru Get Basic Metrics
+        call: apis-guru-apis.getmetrics
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/providers-json
+      name: providers-json
+      description: REST surface for providers.json.
+      operations:
+      - method: GET
+        name: getproviders
+        description: APIs.guru List All Providers
+        call: apis-guru-apis.getproviders
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/specs/{provider}/api-json
+      name: specs-provider-api-json
+      description: REST surface for specs-provider-api}.json.
+      operations:
+      - method: GET
+        name: getapi
+        description: APIs.guru Retrieve One Version of a Particular API
+        call: apis-guru-apis.getapi
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/specs/{provider}/{service}/api-json
+      name: specs-provider-service-api-json
+      description: REST surface for specs-provider-service-api}.json.
+      operations:
+      - method: GET
+        name: getserviceapi
+        description: APIs.guru Retrieve One Version of a Particular API with a ServiceName.
+        call: apis-guru-apis.getserviceapi
+        with:
+          service: rest.service
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/provider-json
+      name: provider-json
+      description: REST surface for provider}.json.
+      operations:
+      - method: GET
+        name: getprovider
+        description: APIs.guru List All APIs for a Particular Provider
+        call: apis-guru-apis.getprovider
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/{provider}/services-json
+      name: provider-services-json
+      description: REST surface for provider-services.json.
+      operations:
+      - method: GET
+        name: getservices
+        description: APIs.guru List All ServiceNames for a Particular Provider
+        call: apis-guru-apis.getservices
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: apis-guru-apis-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for APIs.guru — APIs. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: apis-guru-list-all-apis
+      description: APIs.guru List All APIs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apis-guru-apis.listapis
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apis-guru-get-basic-metrics
+      description: APIs.guru Get Basic Metrics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apis-guru-apis.getmetrics
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apis-guru-list-all-providers
+      description: APIs.guru List All Providers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apis-guru-apis.getproviders
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apis-guru-retrieve-one-version-particular
+      description: APIs.guru Retrieve One Version of a Particular API
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apis-guru-apis.getapi
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apis-guru-retrieve-one-version-particular-2
+      description: APIs.guru Retrieve One Version of a Particular API with a ServiceName.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apis-guru-apis.getserviceapi
+      with:
+        service: tools.service
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apis-guru-list-all-apis-particular
+      description: APIs.guru List All APIs for a Particular Provider
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apis-guru-apis.getprovider
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apis-guru-list-all-servicenames-particular
+      description: APIs.guru List All ServiceNames for a Particular Provider
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apis-guru-apis.getservices
+      outputParameters:
+      - type: object
+        mapping: $.
