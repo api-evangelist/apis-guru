@@ -31,7 +31,7 @@ apis:
     url: https://apis.guru/api-doc
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/openapi/apis-guru-openapi.yaml
-  - type: Postman Collection
+  - type: PostmanCollection
     url: https://www.postman.com/api-evangelist/apis-guru/documentation/wtbfnfn/apis-guru
   - type: JSONSchema
     url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-schema.json
@@ -42,7 +42,7 @@ apis:
   - type: JSONSchema
     url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-metrics-schema.json
     title: Metrics Schema
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apis-guru-apis.yaml
   - url: graphql/apis-guru-graphql.md
     type: GraphQL
