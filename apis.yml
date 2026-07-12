@@ -47,6 +47,8 @@ apis:
   - url: graphql/apis-guru-graphql.md
     type: GraphQL
 common:
+- type: DomainSecurity
+  url: security/apis-guru-domain-security.yml
 - type: Website
   url: https://apis.guru
 - type: About
