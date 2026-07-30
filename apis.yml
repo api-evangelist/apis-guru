@@ -2,7 +2,19 @@ aid: apis-guru
 name: APIs.guru
 description: APIs.guru is an open source, community-driven directory of public REST API definitions in OpenAPI 2.0/3.x format, described as the Wikipedia for Web APIs. The project searches for public API definitions, converts various formats to OpenAPI 3.0, corrects errors in approximately 80% of definitions, and enriches entries with logos, categories, and metadata. It catalogs over 2,500 API descriptions with 100,000+ endpoints, updating definitions weekly from original sources. The platform is licensed under CC0-1.0 for contributed definitions and welcomes community contributions through GitHub.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apis-guru.png
 tags:
 - API Catalog
 - API Directory
@@ -16,36 +28,33 @@ created: '2026-03-25'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: apis-guru:apis-guru-api
-  name: APIs.guru REST API
-  description: The APIs.guru REST API provides programmatic access to the directory of public API definitions, allowing developers to search, browse, and retrieve OpenAPI specifications from the catalog. The API is public and requires no authentication. It provides endpoints to list all APIs, fetch metrics, retrieve provider lists, and access specific API version details including direct links to OpenAPI specs in JSON and YAML formats.
+- aid: apis-guru:apis-guru-apis-api
+  name: APIs.guru APIs API
+  description: Actions relating to APIs in the collection
   humanURL: https://apis.guru/api-doc
   baseURL: https://api.apis.guru/v2
   tags:
-  - API Catalog
-  - API Directory
-  - API Discovery
-  - OpenAPI
+  - APIs
   properties:
+  - type: OpenAPI
+    url: openapi/apis-guru-apis-api-openapi.yml
   - type: Documentation
     url: https://apis.guru/api-doc
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/openapi/apis-guru-openapi.yaml
   - type: PostmanCollection
     url: https://www.postman.com/api-evangelist/apis-guru/documentation/wtbfnfn/apis-guru
   - type: JSONSchema
-    url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-schema.json
-    title: API Schema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-schema.json
   - type: JSONSchema
-    url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-version-schema.json
-    title: API Version Schema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-version-schema.json
   - type: JSONSchema
-    url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-metrics-schema.json
-    title: Metrics Schema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-metrics-schema.json
   - type: X-NaftikoCapability
     url: capabilities/apis-guru-apis.yaml
-  - url: graphql/apis-guru-graphql.md
-    type: GraphQL
+  - type: GraphQL
+    url: graphql/apis-guru-graphql.md
 common:
 - type: AgenticAccess
   url: agentic-access/apis-guru-agentic-access.yml
