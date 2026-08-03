@@ -1,0 +1,14 @@
+{
+  "provider": "apis-guru",
+  "sources": [
+    "apis-guru-apis-api-openapi.yml"
+  ],
+  "outputs": [
+    "apis-guru-apis-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
