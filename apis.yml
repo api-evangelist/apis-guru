@@ -51,11 +51,16 @@ apis:
   - type: JSONSchema
     url: >-
       https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-metrics-schema.json
-  - type: X-NaftikoCapability
-    url: capabilities/apis-guru-apis.yaml
   - type: GraphQL
     url: graphql/apis-guru-graphql.md
 common:
+- type: CodeOfConduct
+  url: https://github.com/APIs-guru/.github/blob/main/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/APIs-guru/openapi-directory/blob/main/CONTRIBUTING.md
+- type: License
+  name: CC0-1.0
+  url: https://github.com/APIs-guru/openapi-directory/blob/main/LICENSE
 - type: AgenticAccess
   url: agentic-access/apis-guru-agentic-access.yml
 - type: DomainSecurity
