@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": ".guru APIs API",
+    "version": "3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "APIs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "APIs.guru List All APIs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apis.guru/v2/list.json"
+          },
+          "docs": "List all APIs in the directory.\nReturns links to the OpenAPI definitions for each API in the directory.\nIf API exist in multiple versions `preferred` one is explicitly marked.\nSome basic info from the OpenAPI definition is cached inside each object.\nThis allows you to generate some simple views without needing to fetch the OpenAPI definition for each API.\n"
+        },
+        {
+          "info": {
+            "name": "APIs.guru Get Basic Metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apis.guru/v2/metrics.json"
+          },
+          "docs": "Some basic metrics for the entire directory.\nJust stunning numbers to put on a front page and are intended purely for WoW effect :)\n"
+        },
+        {
+          "info": {
+            "name": "APIs.guru List All Providers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apis.guru/v2/providers.json"
+          },
+          "docs": "List all the providers in the directory\n"
+        },
+        {
+          "info": {
+            "name": "APIs.guru Retrieve One Version of a Particular API",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apis.guru/v2/specs/:provider/:api.json",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the API entry for one specific version of an API where there is no serviceName."
+        },
+        {
+          "info": {
+            "name": "APIs.guru Retrieve One Version of a Particular API with a ServiceName.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apis.guru/v2/specs/:provider/:service/:api.json",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "service",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the API entry for one specific version of an API where there is a serviceName."
+        },
+        {
+          "info": {
+            "name": "APIs.guru List All APIs for a Particular Provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apis.guru/v2/:provider.json",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List all APIs in the directory for a particular providerName\nReturns links to the individual API entry for each API.\n"
+        },
+        {
+          "info": {
+            "name": "APIs.guru List All ServiceNames for a Particular Provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.apis.guru/v2/:provider/services.json",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List all serviceNames in the directory for a particular providerName\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

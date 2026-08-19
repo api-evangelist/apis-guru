@@ -1,0 +1,616 @@
+{
+  "item": [
+    {
+      "id": "6451870c-3eec-40d7-b47e-ac0c28f4c0f5",
+      "name": "APIs",
+      "description": {
+        "content": "Actions relating to APIs in the collection",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7db197e9-bc2d-4b78-a863-aff53a8d8f18",
+          "name": "APIs.guru List All APIs",
+          "request": {
+            "name": "APIs.guru List All APIs",
+            "description": {
+              "content": "List all APIs in the directory.\nReturns links to the OpenAPI definitions for each API in the directory.\nIf API exist in multiple versions `preferred` one is explicitly marked.\nSome basic info from the OpenAPI definition is cached inside each object.\nThis allows you to generate some simple views without needing to fetch the OpenAPI definition for each API.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "list.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9aa205f7-179f-4563-9e90-9bee69673ff9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b33f4c9-8e2f-43e6-a567-62915ba9a6d4",
+          "name": "APIs.guru Get Basic Metrics",
+          "request": {
+            "name": "APIs.guru Get Basic Metrics",
+            "description": {
+              "content": "Some basic metrics for the entire directory.\nJust stunning numbers to put on a front page and are intended purely for WoW effect :)\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metrics.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "478b81d9-60cd-489d-b71f-8f5f27cc403f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datasets\": [\n    \"example-item\"\n  ],\n  \"fixedPct\": 42,\n  \"fixes\": 42,\n  \"invalid\": 42,\n  \"issues\": 42,\n  \"numAPIs\": 42,\n  \"numDrivers\": 42,\n  \"numEndpoints\": 42,\n  \"numProviders\": 42,\n  \"numSpecs\": 42,\n  \"stars\": 42,\n  \"thisWeek\": {\n    \"added\": 42,\n    \"updated\": 42\n  },\n  \"unofficial\": 42,\n  \"unreachable\": 42\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c05051c-ecb3-48a2-880d-551a30a04c11",
+          "name": "APIs.guru List All Providers",
+          "request": {
+            "name": "APIs.guru List All Providers",
+            "description": {
+              "content": "List all the providers in the directory\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "providers.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c83774f4-a4c3-4ae9-9fad-5755fb1c9fe0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "providers.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    \"example-item\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d161f23d-f84c-4592-9b73-2099db2b0309",
+          "name": "APIs.guru Retrieve One Version of a Particular API",
+          "request": {
+            "name": "APIs.guru Retrieve One Version of a Particular API",
+            "description": {
+              "content": "Returns the API entry for one specific version of an API where there is no serviceName.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "specs",
+                ":provider",
+                "{{api}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provider",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92171e99-c816-403e-accd-03266f6d9a3e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "specs",
+                    ":provider",
+                    "{{api}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provider",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"added\": \"2025-03-15T14:30:00Z\",\n  \"preferred\": \"example-value\",\n  \"versions\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f3c7911-cae2-47c1-88ef-713e6c478a6d",
+          "name": "APIs.guru Retrieve One Version of a Particular API with a ServiceName.",
+          "request": {
+            "name": "APIs.guru Retrieve One Version of a Particular API with a ServiceName.",
+            "description": {
+              "content": "Returns the API entry for one specific version of an API where there is a serviceName.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "specs",
+                ":provider",
+                ":service",
+                "{{api}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provider",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "service",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d87aea25-d430-4660-92d0-a3d144e0e9c8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "specs",
+                    ":provider",
+                    ":service",
+                    "{{api}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provider",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "service",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"added\": \"2025-03-15T14:30:00Z\",\n  \"preferred\": \"example-value\",\n  \"versions\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "783c25d2-45ad-437d-a537-dda7d3c95af8",
+          "name": "APIs.guru List All APIs for a Particular Provider",
+          "request": {
+            "name": "APIs.guru List All APIs for a Particular Provider",
+            "description": {
+              "content": "List all APIs in the directory for a particular providerName\nReturns links to the individual API entry for each API.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "{{provider}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85baa7f9-c9a9-4131-aed9-3743fc354938",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "{{provider}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b39df873-feaa-4833-bd1a-e311ea1b70c4",
+          "name": "APIs.guru List All ServiceNames for a Particular Provider",
+          "request": {
+            "name": "APIs.guru List All ServiceNames for a Particular Provider",
+            "description": {
+              "content": "List all serviceNames in the directory for a particular providerName\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":provider",
+                "services.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provider",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4076da22-21aa-45e4-9391-ce49306ee70e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":provider",
+                    "services.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provider",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    \"example-item\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.apis.guru/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "api"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "provider"
+    }
+  ],
+  "info": {
+    "_postman_id": "b0dfa9da-852d-4c67-b2e7-192ad56d5a03",
+    "name": ".guru APIs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Wikipedia for Web APIs. Repository of API definitions in OpenAPI format.\n**Warning**: If you want to be notified about changes in advance please join our [Slack channel](https://join.slack.com/t/mermade/shared_invite/zt-g78g7xir-MLE_CTCcXCdfJfG3CJe9qA).\nClient sample: [[Demo]](https://apis.guru/simple-ui) [[Repo]](https://github.com/APIs-guru/simple-ui)\n\n\nContact Support:\n Name: APIs.guru\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
