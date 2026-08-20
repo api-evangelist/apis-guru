@@ -21,6 +21,14 @@ tags:
 - API Discovery
 - Community
 - GraphQL
+- Open-Source
+- OpenAPI
+tags_raw:
+- API Catalog
+- API Directory
+- API Discovery
+- Community
+- GraphQL
 - Open Source
 - OpenAPI
 url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/apis.yml
@@ -33,7 +41,8 @@ apis:
   description: Actions relating to APIs in the collection
   humanURL: https://apis.guru/api-doc
   baseURL: https://api.apis.guru/v2
-  tags:
+  tags: []
+  tags_raw:
   - APIs
   properties:
   - type: OpenAPI
