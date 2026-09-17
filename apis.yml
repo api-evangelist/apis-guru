@@ -50,12 +50,11 @@ modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
 - aid: apis-guru:apis-guru-apis-api
-  name: APIs.guru APIs API
+  name: APIs.guru AP Is API
   description: Actions relating to APIs in the collection
   humanURL: https://apis.guru/api-doc
   baseURL: https://api.apis.guru/v2
-  tags: []
-  tags_raw:
+  tags:
   - APIs
   properties:
   - type: OpenAPI
