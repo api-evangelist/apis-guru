@@ -54,7 +54,8 @@ apis:
   description: Actions relating to APIs in the collection
   humanURL: https://apis.guru/api-doc
   baseURL: https://api.apis.guru/v2
-  tags:
+  tags: []
+  tags_raw:
   - APIs
   properties:
   - type: OpenAPI
