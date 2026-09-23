@@ -1,14 +1,23 @@
 {
   "provider": "apis-guru",
   "sources": [
-    "apis-guru-apis-api-openapi.yml"
+    "_original/apis-guru-openapi.yaml"
   ],
   "outputs": [
     "apis-guru-apis-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apis-guru-openapi.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: apis-guru-ap-is-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 1 total)"
+  ],
+  "skipped": [
+    "apis-guru-ap-is-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
