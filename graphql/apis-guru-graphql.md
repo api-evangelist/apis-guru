@@ -1,1 +1,0 @@
-# APIs.guru GraphQL API

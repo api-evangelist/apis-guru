@@ -34,7 +34,7 @@ tags:
 - API Discovery
 - Community
 - GraphQL
-- Open-Source
+- Open Source
 - OpenAPI
 tags_raw:
 - API Catalog
@@ -44,13 +44,14 @@ tags_raw:
 - GraphQL
 - Open Source
 - OpenAPI
+- Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/apis.yml
 created: '2026-03-25'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
 - aid: apis-guru:apis-guru-apis-api
-  name: APIs.guru AP Is API
+  name: APIs.guru APIs API
   description: Actions relating to APIs in the collection
   humanURL: https://apis.guru/api-doc
   baseURL: https://api.apis.guru/v2
@@ -73,8 +74,6 @@ apis:
   - type: JSONSchema
     url: >-
       https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-metrics-schema.json
-  - type: GraphQL
-    url: graphql/apis-guru-graphql.md
 common:
 - type: CodeOfConduct
   url: https://github.com/APIs-guru/.github/blob/main/CODE_OF_CONDUCT.md
