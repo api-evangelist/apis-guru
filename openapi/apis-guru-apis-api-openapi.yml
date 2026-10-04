@@ -264,26 +264,29 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    provider:
-      in: path
-      name: provider
-      required: true
-      schema:
-        example: apis.guru
-        maxLength: 255
-        minLength: 1
-        type: string
-    api:
-      in: path
-      name: api
-      required: true
-      schema:
-        example: 2.1.0
-        maxLength: 255
-        minLength: 1
-        type: string
   schemas:
+    API:
+      additionalProperties: false
+      description: Meta information about API
+      properties:
+        added:
+          description: Timestamp when the API was first added to the directory
+          format: date-time
+          type: string
+        preferred:
+          description: Recommended version
+          type: string
+        versions:
+          additionalProperties:
+            $ref: '#/components/schemas/ApiVersion'
+          description: List of supported versions of the API
+          minProperties: 1
+          type: object
+      required:
+      - added
+      - preferred
+      - versions
+      type: object
     Metrics:
       additionalProperties: false
       description: List of basic metrics
@@ -363,6 +366,48 @@ components:
       - numAPIs
       - numEndpoints
       type: object
+    ApiVersion:
+      additionalProperties: false
+      properties:
+        added:
+          description: Timestamp when the version was added
+          format: date-time
+          type: string
+        externalDocs:
+          description: Copy of `externalDocs` section from OpenAPI definition
+          minProperties: 1
+          type: object
+        info:
+          description: Copy of `info` section from OpenAPI definition
+          minProperties: 1
+          type: object
+        link:
+          description: Link to the individual API entry for this API
+          format: url
+          type: string
+        openapiVer:
+          description: The value of the `openapi` or `swagger` property of the source definition
+          type: string
+        swaggerUrl:
+          description: URL to OpenAPI definition in JSON format
+          format: url
+          type: string
+        swaggerYamlUrl:
+          description: URL to OpenAPI definition in YAML format
+          format: url
+          type: string
+        updated:
+          description: Timestamp when the version was updated
+          format: date-time
+          type: string
+      required:
+      - added
+      - updated
+      - swaggerUrl
+      - swaggerYamlUrl
+      - info
+      - openapiVer
+      type: object
     APIs:
       additionalProperties:
         $ref: '#/components/schemas/API'
@@ -416,70 +461,25 @@ components:
               updated: 2016-06-17 00:21:44+00:00
       minProperties: 1
       type: object
-    ApiVersion:
-      additionalProperties: false
-      properties:
-        added:
-          description: Timestamp when the version was added
-          format: date-time
-          type: string
-        externalDocs:
-          description: Copy of `externalDocs` section from OpenAPI definition
-          minProperties: 1
-          type: object
-        info:
-          description: Copy of `info` section from OpenAPI definition
-          minProperties: 1
-          type: object
-        link:
-          description: Link to the individual API entry for this API
-          format: url
-          type: string
-        openapiVer:
-          description: The value of the `openapi` or `swagger` property of the source definition
-          type: string
-        swaggerUrl:
-          description: URL to OpenAPI definition in JSON format
-          format: url
-          type: string
-        swaggerYamlUrl:
-          description: URL to OpenAPI definition in YAML format
-          format: url
-          type: string
-        updated:
-          description: Timestamp when the version was updated
-          format: date-time
-          type: string
-      required:
-      - added
-      - updated
-      - swaggerUrl
-      - swaggerYamlUrl
-      - info
-      - openapiVer
-      type: object
-    API:
-      additionalProperties: false
-      description: Meta information about API
-      properties:
-        added:
-          description: Timestamp when the API was first added to the directory
-          format: date-time
-          type: string
-        preferred:
-          description: Recommended version
-          type: string
-        versions:
-          additionalProperties:
-            $ref: '#/components/schemas/ApiVersion'
-          description: List of supported versions of the API
-          minProperties: 1
-          type: object
-      required:
-      - added
-      - preferred
-      - versions
-      type: object
+  parameters:
+    api:
+      in: path
+      name: api
+      required: true
+      schema:
+        example: 2.1.0
+        maxLength: 255
+        minLength: 1
+        type: string
+    provider:
+      in: path
+      name: provider
+      required: true
+      schema:
+        example: apis.guru
+        maxLength: 255
+        minLength: 1
+        type: string
 externalDocs:
   url: https://github.com/APIs-guru/openapi-directory/blob/master/API.md
 x-optic-standard: '@febf8ac6-ee67-4565-b45a-5c85a469dca7/Fz6KU3_wMIO5iJ6_VUZ30'
