@@ -75,6 +75,12 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-metrics-schema.json
 common:
+- type: Plans
+  url: plans/apis-guru-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/apis-guru-rate-limits.yml
+- type: FinOps
+  url: finops/apis-guru-finops.yml
 - type: CodeOfConduct
   url: https://github.com/APIs-guru/.github/blob/main/CODE_OF_CONDUCT.md
 - type: ContributionGuide
