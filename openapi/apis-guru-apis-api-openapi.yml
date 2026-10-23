@@ -484,3 +484,9 @@ externalDocs:
   url: https://github.com/APIs-guru/openapi-directory/blob/master/API.md
 x-optic-standard: '@febf8ac6-ee67-4565-b45a-5c85a469dca7/Fz6KU3_wMIO5iJ6_VUZ30'
 x-optic-url: https://app.useoptic.com/organizations/febf8ac6-ee67-4565-b45a-5c85a469dca7/apis/_0fKWqUvhs9ssYNkq1k-c
+x-provenance:
+  method: harvested
+  publisher: APIs.guru
+  source: https://api.apis.guru/v2/openapi.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
