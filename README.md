@@ -1,4 +1,4 @@
-# APIs.guru (apis-guru)
+# APIs.guru
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,148 +66,167 @@
 
 APIs.guru is an open source, community-driven directory of public REST API definitions in OpenAPI 2.0/3.x format, described as the Wikipedia for Web APIs. The project searches for public API definitions, converts various formats to OpenAPI 3.0, corrects errors in approximately 80% of definitions, and enriches entries with logos, categories, and metadata. It catalogs over 2,500 API descriptions with 100,000+ endpoints, updating definitions weekly from original sources. The platform is licensed under CC0-1.0 for contributed definitions and welcomes community contributions through GitHub.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/apis.yml)
+**Areas:** API Catalog · API Directory · API Discovery · Community · GraphQL · Open Source · OpenAPI
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## APIs.guru on APIs.io
 
-## Tags:
+Everything profiled for APIs.guru is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apis-guru/](https://apis.io/providers/apis-guru/)** — or go straight to one of the APIs or properties below.
 
- - API Catalog, API Directory, API Discovery, Community, GraphQL, Open Source, OpenAPI
+### APIs (1)
 
-## Timestamps
+- [APIs.guru APIs API](https://apis.io/apis/apis-guru/apis-guru-apis-api/) — Actions relating to APIs in the collection
 
-- **Created:** 2026-03-25
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### APIs.guru REST API
-The APIs.guru REST API provides programmatic access to the directory of public API definitions, allowing developers to search, browse, and retrieve OpenAPI specifications from the catalog. The API is public and requires no authentication. It provides endpoints to list all APIs, fetch metrics, retrieve provider lists, and access specific API version details including direct links to OpenAPI specs in JSON and YAML formats.
+#### GraphQL (1)
 
-**Human URL:** [https://apis.guru/api-doc](https://apis.guru/api-doc)
+GraphQL schemas.
 
-#### Tags:
+- [Moved to /providers/apis-guru/](https://apis.io/graphqls/apis-guru/apis-guru-graphql/)
 
- - API Catalog, API Directory, API Discovery, OpenAPI
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://apis.guru/api-doc)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/openapi/apis-guru-openapi.yaml)
-- [Postman Collection](https://www.postman.com/api-evangelist/apis-guru/documentation/wtbfnfn/apis-guru)
-- [JSONSchema - API Schema](https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-schema.json)
-- [JSONSchema - API Version Schema](https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-api-version-schema.json)
-- [JSONSchema - Metrics Schema](https://raw.githubusercontent.com/api-evangelist/apis-guru/refs/heads/main/json-schema/apis-guru-metrics-schema.json)
+- [Apis Guru Agentic Access](https://apis.io/agentic-access/apis-guru/apis-guru-agentic-access/)
 
-## Common Properties
+#### JSON Schema (4)
+
+The data models the API reads and writes.
+
+- [APIs](https://apis.io/schemas/apis-guru/apis-guru-ap-is/)
+- [API](https://apis.io/schemas/apis-guru/apis-guru-api/)
+- [ApiVersion](https://apis.io/schemas/apis-guru/apis-guru-api-version/)
+- [Metrics](https://apis.io/schemas/apis-guru/apis-guru-metrics/)
+
+#### JSON Structure (4)
+
+Data models expressed in JSON Structure.
+
+- [Apis Guru Ap Is Structure](https://apis.io/json-structure/apis-guru/apis-guru-ap-is-structure/)
+- [Apis Guru Api Structure](https://apis.io/json-structure/apis-guru/apis-guru-api-structure/)
+- [Apis Guru Api Version Structure](https://apis.io/json-structure/apis-guru/apis-guru-api-version-structure/)
+- [Apis Guru Metrics Structure](https://apis.io/json-structure/apis-guru/apis-guru-metrics-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apis Guru Context](https://apis.io/jsonld/apis-guru/apis-guru-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apis Guru Vocabulary](https://apis.io/vocabularies/apis-guru/apis-guru-vocabulary/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Apis Guru Ap Is Example](https://apis.io/examples/apis-guru/apis-guru-ap-is-example/)
+- [Apis Guru Api Example](https://apis.io/examples/apis-guru/apis-guru-api-example/)
+- [Apis Guru Api Version Example](https://apis.io/examples/apis-guru/apis-guru-api-version-example/)
+- [Apis Guru Metrics Example](https://apis.io/examples/apis-guru/apis-guru-metrics-example/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [.guru APIs API](https://apis.io/collections/apis-guru/open-apis-guru-apis-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [APIs.guru — jsonschema rules](https://apis.io/rules/apis-guru/apis-guru-jsonschema-spectral-rules/)
+- [APIs.guru API Rules](https://apis.io/rules/apis-guru/apis-guru-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apis Guru Domain Security](https://apis.io/security/apis-guru/apis-guru-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apis Guru Plans Pricing](https://apis.io/plans/apis-guru/apis-guru-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apis Guru Rate Limits](https://apis.io/rate-limits/apis-guru/apis-guru-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apis Guru Finops](https://apis.io/finops/apis-guru/apis-guru-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://apis.guru)
-- [About](https://apis.guru/about)
 - [Documentation](https://apis.guru/api-doc)
-- [Blog](https://apis.guru/blog)
-- [GitHub Organization](https://github.com/APIs-guru)
-- [GitHub Repository](https://github.com/APIs-guru/openapi-directory)
-- [GitHub Repository - AsyncAPI Directory](https://github.com/APIs-guru/asyncapi-directory)
-- [GitHub Repository - GraphQL Voyager](https://github.com/APIs-guru/graphql-voyager)
-- [GitHub Repository - Awesome OpenAPI 3](https://github.com/APIs-guru/awesome-openapi3)
-- [GitHub Repository - AWS to OpenAPI Converter](https://github.com/APIs-guru/aws2openapi)
-- [GitHub Repository - Google Discovery to OpenAPI Converter](https://github.com/APIs-guru/google-discovery-to-swagger)
-- [GitHub Repository - GraphQL Faker](https://github.com/APIs-guru/graphql-faker)
-- [GitHub Repository - Public GraphQL APIs Directory](https://github.com/APIs-guru/graphql-apis)
-- [X](https://x.com/APIs_guru)
 - [Support](https://github.com/APIs-guru/openapi-directory/issues)
+- [Blog](https://apis.guru/blog)
+- [GitHub](https://github.com/APIs-guru)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| OpenAPI Directory | Comprehensive directory of over 2,500 public API definitions in OpenAPI 2.0 and 3.x format, updated weekly from original sources. |
-| Format Conversion | Converts various API description formats (RAML, Google Discovery, AWS, etc.) to OpenAPI 3.0 standard for consistency and compatibility. |
-| Quality Control | Corrects errors in approximately 80% of API definitions and validates all specifications before inclusion in the directory. |
-| AsyncAPI Directory | Companion directory of asynchronous API specifications in AsyncAPI format for event-driven and message-based APIs. |
-| GraphQL Voyager | Visual tool that represents any GraphQL API as an interactive graph, making schema exploration intuitive and visual. |
-| REST API Access | Public REST API at api.apis.guru/v2 for programmatic access to the directory, metrics, provider lists, and individual API specs. |
-| RSS Feeds | RSS feeds for both newly added and recently updated API definitions, allowing developers to stay current with directory changes. |
-| Metadata Enrichment | Enriches API definitions with logos, categories, provider names, and other metadata to improve discoverability and browsability. |
+**Kin Score 31.3** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 59.5 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| API Discovery | Developers can search and browse the directory to discover public APIs across thousands of providers by category, provider, or keyword. |
-| SDK Generation | OpenAPI specs from the directory can be used with tools like Microsoft Kiota and Speakeasy to generate API client SDKs. |
-| API Documentation | ReDoc and other documentation tools use the directory specs to generate beautiful, interactive API documentation automatically. |
-| API Testing | HTTP Toolkit and other testing tools leverage the directory for debugging and mocking API requests against standardized specs. |
-| Schema Exploration | GraphQL Voyager allows teams to visually explore GraphQL schema relationships to understand API structure quickly. |
-| API Catalog Building | Organizations can use the directory as a foundation for building their own internal API catalogs and governance programs. |
+**Agent readiness 23.6** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| HTTP Toolkit | HTTP debugging and testing platform that integrates with API definitions from the APIs.guru directory for request interception. |
-| Microsoft Kiota | Microsoft's API client generator that uses OpenAPI specs from APIs.guru to generate typed API clients in multiple languages. |
-| Speakeasy | SDK generation platform that pulls OpenAPI definitions from the directory to generate production-ready SDKs for API providers. |
-| ReDoc | API documentation generation tool that uses OpenAPI specs from APIs.guru to create beautiful, customizable documentation sites. |
-| Open Collective | Community funding platform where APIs.guru receives financial support from sponsors who benefit from the open directory. |
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apis-guru/](https://apis.io/providers/apis-guru/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [APIs.guru REST API](openapi/apis-guru-openapi.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for APIs.guru: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [API Schema](json-schema/apis-guru-api-schema.json)
-- [APIs Schema](json-schema/apis-guru-ap-is-schema.json)
-- [API Version Schema](json-schema/apis-guru-api-version-schema.json)
-- [Metrics Schema](json-schema/apis-guru-metrics-schema.json)
-
-### JSON Structure
-
-- [API Structure](json-structure/apis-guru-api-structure.json)
-- [APIs Structure](json-structure/apis-guru-ap-is-structure.json)
-- [API Version Structure](json-structure/apis-guru-api-version-structure.json)
-- [Metrics Structure](json-structure/apis-guru-metrics-structure.json)
-
-### JSON-LD
-
-- [APIs.guru Context](json-ld/apis-guru-context.jsonld)
-
-### Examples
-
-- [API Example](examples/apis-guru-api-example.json)
-- [APIs Example](examples/apis-guru-ap-is-example.json)
-- [API Version Example](examples/apis-guru-api-version-example.json)
-- [Metrics Example](examples/apis-guru-metrics-example.json)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [APIs.guru REST API](capabilities/shared/apis-guru-api.yaml) — 7 operations for API discovery and catalog access
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [API Discovery](capabilities/api-discovery.yaml) | APIs.guru REST API | 7 | API Developer, Platform Engineer |
-
-## Vocabulary
-
-- [APIs.guru Vocabulary](vocabulary/apis-guru-vocabulary.yaml) — Unified taxonomy mapping 5 resources, 2 actions, 1 workflow, and 2 personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [APIs.guru Spectral Rules](rules/apis-guru-spectral-rules.yml) — 30 rules across 10 categories enforcing APIs.guru API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apis-guru/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
